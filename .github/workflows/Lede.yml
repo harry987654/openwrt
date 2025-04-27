@@ -263,6 +263,10 @@ jobs:
         delete_workflows: false
         workflows_keep_day: 90
         gh_token: ${{ secrets.REPO_TOKEN }}
+
+    - name: Check disk space
+      run: |
+        df -h
         
     - name: 触发启动"${{ matrix.target }}"开始编译
       id: gitpush
